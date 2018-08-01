@@ -40,7 +40,7 @@ public class CountriesApp {
 				break;
 			}
 
-			cont = Validator.getString(scnr, "\nWould you like to view the list of options again? y/n?");
+			cont = Validator.getString(scnr, "\nWould you like to view the list of your options again? y/n?");
 		} while (cont.matches("[yY].*"));
 
 		System.out.println("\nI hope that you were able to accomplish everything you needed to do! Have a good one.");

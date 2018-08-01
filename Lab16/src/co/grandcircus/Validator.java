@@ -10,9 +10,8 @@ import java.util.regex.Pattern;
 
 public class Validator {
 
-	
- 	// Get any valid integer.
-	
+	// Get any valid integer.
+
 	public static int getInt(Scanner scnr, String prompt) {
 		// This approach uses exception handling.
 		System.out.print(prompt);
@@ -21,13 +20,12 @@ public class Validator {
 			scnr.nextLine();
 			return num;
 		} catch (InputMismatchException e) {
-			System.out.println("Enter a whole number, using digits.");
+			System.out.println("\nEnter a whole number, using digits.\n");
 			scnr.nextLine();
 			return getInt(scnr, prompt);
 		}
 	}
 
-	
 	// Get any valid double.
 
 	public static double getDouble(Scanner scnr, String prompt) {
@@ -38,7 +36,7 @@ public class Validator {
 			isValid = scnr.hasNextDouble();
 			if (!isValid) {
 				scnr.nextLine();
-				System.out.println("Enter a number, in digits.");
+				System.out.println("\nEnter a number, in digits.\n");
 			}
 		} while (!isValid);
 
@@ -47,18 +45,16 @@ public class Validator {
 		return number;
 	}
 
-	
 	// Get any string.
-	
+
 	public static String getString(Scanner scnr, String prompt) {
 		// This approach uses exception handling.
 		System.out.print(prompt);
 		return scnr.nextLine();
 	}
 
-	
 	// Get any valid integer between min and max.
-	 
+
 	public static int getInt(Scanner scnr, String prompt, int min, int max) {
 		boolean isValid = false;
 		int number;
@@ -67,10 +63,10 @@ public class Validator {
 
 			if (number < min) {
 				isValid = false;
-				System.out.println("The number must be at least " + min);
+				System.out.println("\nThe number must be at least " + min + "\n");
 			} else if (number > max) {
 				isValid = false;
-				System.out.println("The number must not be larger than " + max);
+				System.out.println("\nThe number must not be larger than " + max + "\n");
 			} else {
 				isValid = true;
 			}
@@ -89,10 +85,10 @@ public class Validator {
 
 			if (number < min) {
 				isValid = false;
-				System.out.println("The number must be at least " + min + ". Please re-enter: ");
+				System.out.println("\nThe number must be at least " + min + ". Please re-enter.\n ");
 			} else if (number > max) {
 				isValid = false;
-				System.out.println("The number must not be larger than " + max + ". Please re-enter: ");
+				System.out.println("\nThe number must not be larger than " + max + ". Please re-enter.\n");
 			} else {
 				isValid = true;
 			}
@@ -100,10 +96,9 @@ public class Validator {
 		} while (!isValid);
 		return number;
 	}
-	
-	
+
 	// Get a string of input from the user that must match the given regex.
-	 
+
 	public static String getStringMatchingRegex(Scanner scnr, String prompt, String regex, boolean caseSensitive) {
 		boolean isValid = false;
 		String input;
@@ -126,7 +121,7 @@ public class Validator {
 			if (match.find()) {
 				isValid = true;
 			} else {
-				System.out.println("Please re-enter using the proper format.");
+				System.out.println("\nPlease re-enter using the proper format.\n");
 				isValid = false;
 			}
 
@@ -134,9 +129,8 @@ public class Validator {
 		return input;
 	}
 
-
 	// Get a date from user input in the format "mm/dd/yyyy"
-	
+
 	public static Date getDate(Scanner scnr, String prompt) {
 		SimpleDateFormat format = new SimpleDateFormat("mm/dd/yyyy");
 		format.setLenient(false);
@@ -156,7 +150,7 @@ public class Validator {
 			} catch (ParseException ex) {
 				// If exception occurs, it's invalid.
 				isValid = false;
-				System.out.println("Please enter a valid date in the correct format: MM/DD/YYYY.");
+				System.out.println("\nPlease enter a valid date in the correct format: MM/DD/YYYY.\n");
 			}
 
 		} while (!isValid);
