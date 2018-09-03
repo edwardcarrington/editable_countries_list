@@ -15,7 +15,7 @@ public class CountriesApp {
 		System.out.println("\nThanks, " + humanName
 				+ "!\nWe have just ran you through out 2 factor verification by using just your first name, and now you're all set to edit away!-)\n");
 
-		System.out.println("Here are the currently Countries:\n");
+		System.out.println("Here are the Countries:\n");
 		printList();
 
 		String cont = "y";
